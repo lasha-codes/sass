@@ -21,6 +21,7 @@ body {
   color: #ee8309;
   font-weight: 400;
   transition: all 0.4s ease;
+  cursor: pointer;
 }
 .main .main_paragraph:hover {
   color: rgb(190, 25, 53);
