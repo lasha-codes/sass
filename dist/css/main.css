@@ -1,5 +1,18 @@
 body {
-  background: blue;
+  background: #272627;
   color: #fff;
   font-weight: 700;
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+.main .mainparagraph {
+  color: #ee8309;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.main .mainparagraph:hover {
+  color: pink;
 }/*# sourceMappingURL=main.css.map */
