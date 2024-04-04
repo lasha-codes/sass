@@ -1,0 +1,15 @@
+// variables
+$primary-color: #462744;
+$accent-color: #ee8309;
+$text-color: #fff;
+$font-weights: (
+  'regular': 400,
+  'medium': 500,
+  'bold': 700,
+);
+
+body {
+  background: blue;
+  color: $text-color;
+  font-weight: map-get($font-weights, bold);
+}
