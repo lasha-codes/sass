@@ -5,6 +5,26 @@
   @return map-get($font-weights, $weight-name);
 }
 
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin theme($light-theme: true) {
+  @if ($light-theme) {
+    background: lighten($primary-color, 100%);
+    color: darken($text-color, 100%);
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
 // create a map
 $font-weights: (
   'regular': 400,
@@ -20,14 +40,12 @@ body {
 
 // nesting
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter(row);
   width: 80%;
   margin: 0 auto;
+  gap: 20px;
 
   #{&}_paragraph {
-    color: $accent-color;
     font-weight: weight(regular);
     transition: all 0.4s ease;
     cursor: pointer;
@@ -36,4 +54,13 @@ body {
       color: rgb(190, 25, 53);
     }
   }
+
+  @include mobile {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.light {
+  @include theme(false);
 }
