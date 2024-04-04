@@ -1,7 +1,6 @@
-// variables
-$primary-color: #272627;
-$accent-color: #ee8309;
-$text-color: #fff;
+@import './resets';
+@import './variables';
+
 // create a map
 $font-weights: (
   'regular': 400,
