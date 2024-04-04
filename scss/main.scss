@@ -1,6 +1,10 @@
 @import './resets';
 @import './variables';
 
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}
+
 // create a map
 $font-weights: (
   'regular': 400,
@@ -16,16 +20,19 @@ body {
 
 // nesting
 .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 80%;
   margin: 0 auto;
 
-  #{&}paragraph {
+  #{&}_paragraph {
     color: $accent-color;
-    font-weight: map-get($font-weights, 'medium');
-    transition: all 0.2s ease;
+    font-weight: weight(regular);
+    transition: all 0.4s ease;
 
     &:hover {
-      color: pink;
+      color: rgb(190, 25, 53);
     }
   }
 }
